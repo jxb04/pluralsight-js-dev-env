@@ -5,9 +5,9 @@ export default {
   debug: true,
   devtool: 'source-map',
   noInfo: false,
-  entry: [
-    path.resolve(__dirname, 'src/index')
-  ],
+  entry: {
+    main:path.resolve(__dirname, 'src/index')
+  },
   target: 'web',
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -19,7 +19,7 @@ export default {
      new webpack.optimize.DedupePlugin(),
 
      // Minify JS
-     new.webpack.optimize.UglifyJsPlugin()
+     new webpack.optimize.UglifyJsPlugin()
   ],
   module: {
     loaders: [
